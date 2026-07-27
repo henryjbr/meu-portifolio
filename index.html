@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio de Henry, desenvolvedor de software focado em interfaces web, apps, APIs, automações e produtos digitais com estética azul premium."
+    />
+    <title>Henry | Desenvolvedor de Software</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor-aura" aria-hidden="true"></div>
+
+    <header class="topbar" data-open="false">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <img class="brand-logo" src="assets/logo-henry.png" alt="Henry" />
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="primary-nav" aria-label="Principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#responsavel">Responsável</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#stack">Stack</a>
+        <a href="#github">GitHub</a>
+        <a href="#processo">Processo</a>
+        <a class="nav-cta" href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-label="Portfólio de Henry">
+        <canvas id="network-canvas" aria-hidden="true"></canvas>
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <div class="hero-kicker reveal">
+            <p class="eyebrow">desenvolvedor full-stack | web, mobile e automações</p>
+            <span>disponível para novos projetos</span>
+          </div>
+          <h1 class="reveal">Portfólio com interfaces, APIs e <span>automações.</span></h1>
+          <p class="hero-copy reveal">
+            Sou Henry, desenvolvedor que cria landing pages, dashboards, apps e integrações com
+            estética premium, código organizado e deploy pronto para impressionar desde o primeiro acesso.
+          </p>
+
+          <div class="hero-actions reveal">
+            <a class="button primary" href="#projetos">Ver projetos</a>
+            <a class="button ghost" href="https://instagram.com/dev_henryzb" target="_blank" rel="noreferrer">Falar comigo</a>
+          </div>
+
+          <dl class="hero-metrics reveal" aria-label="Destaques do portfólio">
+            <div>
+              <dt>UI</dt>
+              <dd>layout responsivo, limpo e memorável</dd>
+            </div>
+            <div>
+              <dt>API</dt>
+              <dd>integrações, dados e fluxos conectados</dd>
+            </div>
+            <div>
+              <dt>SHIP</dt>
+              <dd>publicação rápida com Git e Vercel</dd>
+            </div>
+          </dl>
+        </div>
+
+        <aside class="hero-visual reveal" aria-label="Máscara formada por números binários">
+          <div class="binary-portrait" role="img" aria-label="Desenho de máscara hacker formado por números binários">
+            <img class="binary-mask-art" src="assets/binary-mask.png" alt="Máscara hacker formada por tipografia binária" />
+          </div>
+        </aside>
+      </section>
+
+      <section class="intro section-band" id="sobre">
+        <div class="section-inner intro-grid">
+          <div class="section-heading intro-heading reveal">
+            <p class="eyebrow">sobre</p>
+            <h2>Design forte, código limpo e produto pronto para publicar.</h2>
+            <div class="intro-pills" aria-label="Pontos fortes">
+              <span>UI premium</span>
+              <span>performance</span>
+              <span>automações</span>
+            </div>
+          </div>
+          <div class="intro-copy reveal">
+            <p class="intro-lead">
+              Crio interfaces com aparência profissional, fluxo claro e base técnica preparada para
+              virar produto real, não só uma tela bonita.
+            </p>
+            <p>
+              O foco é unir visual marcante, responsividade, integração com APIs e deploy rápido para
+              entregar sites, dashboards e automações que passam confiança desde o primeiro acesso.
+            </p>
+
+            <div class="intro-proof-grid" aria-label="Diferenciais de desenvolvimento">
+              <article>
+                <span>01</span>
+                <h3>Interface clara</h3>
+                <p>Layouts responsivos, hierarquia visual forte e experiência pensada para conversão.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Código evolutivo</h3>
+                <p>Componentes organizados, estados previsíveis e estrutura simples de manter.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>Entrega completa</h3>
+                <p>Integrações, ajustes finos, publicação e acabamento para apresentar sem improviso.</p>
+              </article>
+            </div>
+
+            <div class="intro-stack-strip" aria-label="Stack principal">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Node</span>
+              <span>APIs</span>
+              <span>Vercel</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="responsible section-band" id="responsavel">
+        <div class="section-inner responsible-grid">
+          <figure class="responsible-media reveal" data-tilt>
+            <div class="responsible-terminal" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>service.owner</strong>
+            </div>
+            <img
+              class="responsible-photo"
+              src="assets/responsavel-henry.png"
+              alt="Henry John Bell Del Rosal, responsável pelo serviço"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="responsible-scan" aria-hidden="true"></div>
+            <figcaption class="responsible-badge">
+              <span>responsável oficial</span>
+              <strong>Henry John Bell Del Rosal</strong>
+              <small>Full-stack | Web, mobile, APIs e automações</small>
+            </figcaption>
+            <div class="responsible-code" aria-hidden="true">
+              <span>ID: HJBDR</span>
+              <span>STATUS: ONLINE</span>
+            </div>
+          </figure>
+
+          <div class="section-heading responsible-copy reveal">
+            <p class="eyebrow">responsável pelo serviço</p>
+            <h2>Henry John Bell Del Rosal</h2>
+            <p>
+              Atendimento direto, planejamento, desenvolvimento e publicação ficam sob a
+              responsabilidade de Henry, mantendo cada etapa do projeto alinhada, profissional e pronta
+              para entregar uma experiência digital de alto nível.
+            </p>
+
+            <div class="responsible-status" aria-label="Resumo do responsável">
+              <span>owner verificado</span>
+              <strong>Um único responsável cuidando do projeto inteiro.</strong>
+              <small>planejamento → interface → código → publicação</small>
+            </div>
+
+            <div class="responsible-points" aria-label="Responsabilidades do serviço">
+              <article>
+                <span>01</span>
+                <strong>Direção do projeto</strong>
+                <p>Organiza objetivo, prioridades, visual e funcionalidades antes da execução.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <strong>Execução técnica</strong>
+                <p>Constrói interfaces, integrações, automações e ajustes responsivos.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <strong>Entrega final</strong>
+                <p>Revisa acabamento, performance, publicação e pontos de contato do site.</p>
+              </article>
+            </div>
+
+            <div class="responsible-actions">
+              <a class="button primary" href="https://wa.me/5519992072301" target="_blank" rel="noreferrer">Falar com Henry</a>
+              <a class="button ghost" href="#projetos">Ver entregas</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects section-band" id="projetos">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div class="section-heading">
+              <p class="eyebrow">sites publicados</p>
+              <h2>Três projetos para mostrar resultado real.</h2>
+            </div>
+            <p>
+              Uma área direta para apresentar imagens dos seus sites, explicar o objetivo de cada
+              projeto e levar o visitante para acessar a versão online.
+            </p>
+          </div>
+
+          <div class="site-showcase">
+            <!-- Troque src, href, título e texto pelos seus sites reais. -->
+            <article class="site-card reveal" data-tilt>
+              <a class="site-shot" href="#" aria-label="Acessar Galeria Fina Arte">
+                <img src="assets/site-1.png" alt="Prévia do site Galeria Fina Arte" />
+              </a>
+              <div class="site-copy">
+                <span>estúdio de tatuagem</span>
+                <h3>Galeria Fina Arte</h3>
+                <p>
+                  Landing page escura e elegante para estúdio de tatuagem, com agenda em destaque,
+                  portfólio visual e chamada direta para contato.
+                </p>
+                <div class="project-tags" aria-label="Tecnologias do Site 01">
+                  <small>HTML</small>
+                  <small>CSS</small>
+                  <small>JavaScript</small>
+                </div>
+                <a class="site-link" href="https://galeria-fina-arte.vercel.app/">Acessar site</a>
+              </div>
+            </article>
+
+            <article class="site-card reveal" data-tilt>
+              <a class="site-shot" href="#" aria-label="Acessar Bella Frandin">
+                <img src="assets/site-2.png" alt="Prévia do site Bella Frandin Tattoo" />
+              </a>
+              <div class="site-copy">
+                <span>portfólio artístico</span>
+                <h3>Bella Frandin</h3>
+                <p>
+                  Interface premium para artista de tatuagem, com identidade sofisticada, foco em
+                  assinatura visual e navegação pensada para apresentar o trabalho.
+                </p>
+                <div class="project-tags" aria-label="Tecnologias do Site 02">
+                  <small>UI Design</small>
+                  <small>Landing</small>
+                  <small>Responsivo</small>
+                </div>
+                <a class="site-link" href="https://bella-frandin-estudio.vercel.app/">Acessar site</a>
+              </div>
+            </article>
+
+            <article class="site-card reveal" data-tilt>
+              <a class="site-shot" href="https://hgk-tech.vercel.app" target="_blank" rel="noreferrer" aria-label="Acessar HGK Tech">
+                <img src="assets/site-3.png" alt="Prévia do site HGK Tech" />
+              </a>
+              <div class="site-copy">
+                <span>site institucional</span>
+                <h3>HGK Tech</h3>
+                <p>
+                  Site de tecnologia com estética azul, comunicação objetiva e foco em automação,
+                  dados e sistemas integrados para empresas.
+                </p>
+                <div class="project-tags" aria-label="Tecnologias do Site 03">
+                  <small>HTML</small>
+                  <small>CSS</small>
+                  <small>Deploy</small>
+                </div>
+                <a class="site-link" href="https://hgk-tech.vercel.app" target="_blank" rel="noreferrer">Acessar site</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stack section-band" id="stack">
+        <div class="section-inner stack-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">stack</p>
+            <h2>Ferramentas modernas para construir, testar e publicar.</h2>
+            <p>
+              O foco é escolher tecnologia que sustenta a experiência: velocidade, responsividade,
+              integração com APIs, animação na medida e uma base simples de evoluir depois do lançamento.
+            </p>
+          </div>
+
+          <div class="stack-board reveal" data-tilt>
+            <div class="stack-terminal" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>stack.config.ts</strong>
+            </div>
+
+            <div class="stack-lane">
+              <span>front-end</span>
+              <strong>React</strong>
+              <strong>Next.js</strong>
+              <strong>TypeScript</strong>
+              <p>Interfaces rápidas, componentes reutilizáveis e páginas prontas para escalar.</p>
+            </div>
+            <div class="stack-lane">
+              <span>interface</span>
+              <strong>CSS avançado</strong>
+              <strong>Canvas</strong>
+              <strong>Motion</strong>
+              <p>Visual premium, microinterações e detalhes técnicos que deixam o site memorável.</p>
+            </div>
+            <div class="stack-lane">
+              <span>back-end</span>
+              <strong>Node.js</strong>
+              <strong>REST APIs</strong>
+              <strong>Supabase</strong>
+              <p>Dados, autenticação e integrações para transformar layout em produto funcional.</p>
+            </div>
+            <div class="stack-lane">
+              <span>deploy</span>
+              <strong>Git</strong>
+              <strong>Vercel</strong>
+              <strong>Analytics</strong>
+              <p>Versionamento, publicação rápida e leitura de métricas após o lançamento.</p>
+            </div>
+
+            <div class="stack-status" aria-label="Status de entrega">
+              <span>build aprovado</span>
+              <strong>performance, responsividade e deploy alinhados</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="github-section section-band" id="github">
+        <div class="section-inner github-grid">
+          <div class="section-heading github-heading reveal">
+            <p class="eyebrow">github</p>
+            <h2>Código público para acompanhar como eu construo.</h2>
+            <p>
+              Repositórios, estudos e projetos em evolução reunidos em um perfil direto para quem quer
+              ver estrutura, organização e prática real de desenvolvimento.
+            </p>
+
+            <div class="github-actions">
+              <a class="button primary" href="https://github.com/henryjbr" target="_blank" rel="noreferrer">Abrir GitHub</a>
+              <a class="button ghost" href="#projetos">Ver projetos</a>
+            </div>
+          </div>
+
+          <aside class="github-panel reveal" data-tilt aria-label="Resumo do perfil no GitHub">
+            <div class="github-profile">
+              <img
+                class="github-avatar"
+                src="https://github.com/henryjbr.png?size=160"
+                alt="Foto de perfil de Henry no GitHub"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <span>perfil público</span>
+                <strong>@henryjbr</strong>
+              </div>
+            </div>
+
+            <div class="github-terminal" aria-hidden="true">
+              <span>git status</span>
+              <strong>projetos versionados, commits frequentes e deploys prontos para produção</strong>
+            </div>
+
+            <div class="github-points" aria-label="Destaques do GitHub">
+              <article>
+                <span>01</span>
+                <strong>Front-end</strong>
+                <p>Interfaces responsivas, componentes reutilizáveis e acabamento visual.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <strong>Back-end</strong>
+                <p>APIs, integrações, regras de negócio e estrutura pensada para evoluir.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <strong>Deploy</strong>
+                <p>Projetos organizados para publicação, revisão e melhoria contínua.</p>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="process section-band" id="processo">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div class="section-heading">
+              <p class="eyebrow">processo</p>
+              <h2>Da ideia ao deploy sem perder o acabamento.</h2>
+            </div>
+            <p>
+              Um fluxo direto para sair da ideia solta e chegar em algo navegável, vendável e pronto
+              para publicar.
+            </p>
+          </div>
+
+          <ol class="process-list">
+            <li class="reveal">
+              <span>01</span>
+              <h3>Diagnóstico</h3>
+              <p>Objetivo, público, referências, funcionalidades e prioridade do primeiro deploy.</p>
+            </li>
+            <li class="reveal">
+              <span>02</span>
+              <h3>Interface</h3>
+              <p>Layout responsivo, identidade visual, componentes e fluxo principal da experiência.</p>
+            </li>
+            <li class="reveal">
+              <span>03</span>
+              <h3>Código</h3>
+              <p>Implementação organizada com atenção a performance, estados, acessibilidade e APIs.</p>
+            </li>
+            <li class="reveal">
+              <span>04</span>
+              <h3>Deploy</h3>
+              <p>Publicação, revisão final, ajustes finos e próximos passos para evoluir o produto.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="contact section-band" id="contato">
+        <div class="section-inner contact-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">contato</p>
+            <h2>Vamos transformar sua ideia em um site pronto para publicar.</h2>
+            <p>
+              Escolha o tipo de projeto e envie uma mensagem já organizada pelo WhatsApp.
+              Direto, rápido e com as informações certas para começar a conversa.
+            </p>
+
+            <div class="contact-direct" aria-label="Canais de contato">
+              <a class="contact-card contact-card-primary" href="https://wa.me/5519992072301" target="_blank" rel="noreferrer">
+                <span>WhatsApp</span>
+                <strong>(19) 99207-2301</strong>
+                <small>resposta direta para orçamento</small>
+              </a>
+              <a class="contact-card" href="https://instagram.com/dev_henryzb" target="_blank" rel="noreferrer">
+                <span>Instagram</span>
+                <strong>@dev_henryzb</strong>
+                <small>acompanhe projetos e novidades</small>
+              </a>
+            </div>
+          </div>
+
+          <form class="brief-tool reveal" id="brief-form">
+            <div class="form-head">
+              <span>mensagem guiada</span>
+              <strong>Configure o projeto</strong>
+            </div>
+
+            <fieldset>
+              <legend>Projeto</legend>
+              <div class="chip-group" data-choice="project">
+                <button class="chip is-active" type="button" data-value="landing page" aria-pressed="true">Landing</button>
+                <button class="chip" type="button" data-value="site institucional" aria-pressed="false">Site</button>
+                <button class="chip" type="button" data-value="dashboard" aria-pressed="false">Dashboard</button>
+                <button class="chip" type="button" data-value="app mobile" aria-pressed="false">App</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Estética</legend>
+              <div class="chip-group" data-choice="style">
+                <button class="chip is-active" type="button" data-value="azul escuro" aria-pressed="true">Azul escuro</button>
+                <button class="chip" type="button" data-value="minimalista" aria-pressed="false">Minimal</button>
+                <button class="chip" type="button" data-value="tecnológica" aria-pressed="false">Tech</button>
+                <button class="chip" type="button" data-value="premium" aria-pressed="false">Premium</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Prazo</legend>
+              <div class="chip-group" data-choice="timeline">
+                <button class="chip is-active" type="button" data-value="7 a 14 dias" aria-pressed="true">7 a 14 dias</button>
+                <button class="chip" type="button" data-value="este mês" aria-pressed="false">Este mês</button>
+                <button class="chip" type="button" data-value="sem pressa" aria-pressed="false">Sem pressa</button>
+              </div>
+            </fieldset>
+
+            <div class="range-row">
+              <label for="complexity">Complexidade</label>
+              <input id="complexity" name="complexity" type="range" min="1" max="5" value="3" />
+              <output id="complexity-output" for="complexity">3/5</output>
+            </div>
+
+            <label class="field-row" for="brief-context">
+              <span>Contexto</span>
+              <textarea
+                id="brief-context"
+                name="context"
+                rows="4"
+                placeholder="Ex: preciso de um site para vender serviços de automação..."
+              ></textarea>
+            </label>
+
+            <div class="brief-preview" aria-live="polite">
+              <span>mensagem</span>
+              <strong id="brief-preview-text">landing page | azul escuro | 7 a 14 dias | complexidade 3/5</strong>
+            </div>
+
+            <div class="contact-actions">
+              <button class="button primary" type="submit">Enviar no WhatsApp</button>
+              <a class="button ghost" href="https://wa.me/5519992072301" target="_blank" rel="noreferrer">Abrir contato</a>
+            </div>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Henry | Desenvolvedor de Software</p>
+      <p>Web, mobile, APIs e automações com estética premium.</p>
+      <a href="#inicio">voltar ao topo</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
