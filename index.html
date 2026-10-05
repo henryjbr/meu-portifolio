@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfólio de Henry, desenvolvedor de software focado em interfaces web, apps, APIs, automações e produtos digitais com estética azul premium."
+      content="Portfólio de Henry, desenvolvedor de software focado em interfaces web, apps, APIs, automações e produtos digitais com estética preta e cinza premium."
     />
     <title>Henry | Desenvolvedor de Software</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="cursor-aura" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
     <header class="topbar" data-open="false">
-      <a class="brand" href="#inicio" aria-label="Ir para o início">
-        <img class="brand-logo" src="assets/logo-henry.png" alt="Henry" />
-      </a>
-
       <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav">
         <span></span>
         <span></span>
@@ -27,9 +24,8 @@
       <nav class="nav-links" id="primary-nav" aria-label="Principal">
         <a href="#inicio">Início</a>
         <a href="#sobre">Sobre</a>
-        <a href="#responsavel">Responsável</a>
+        <a href="#responsavel">Quem sou</a>
         <a href="#projetos">Projetos</a>
-        <a href="#stack">Stack</a>
         <a href="#github">GitHub</a>
         <a href="#processo">Processo</a>
         <a class="nav-cta" href="#contato">Contato</a>
@@ -54,7 +50,36 @@
 
           <div class="hero-actions reveal">
             <a class="button primary" href="#projetos">Ver projetos</a>
-            <a class="button ghost" href="https://instagram.com/dev_henryzb" target="_blank" rel="noreferrer">Falar comigo</a>
+            <a class="button ghost icon-button" href="https://instagram.com/dev_henryzb" target="_blank" rel="noreferrer" aria-label="Abrir Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1.2"></circle>
+              </svg>
+            </a>
+            <a class="button ghost icon-button" href="https://wa.me/5519992072301" target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp">
+              <svg class="social-icon whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.8 19.2 6 15.5a7.3 7.3 0 1 1 2.7 2.7z"></path>
+                <path d="M9.2 8.6c0.2-0.4 0.4-0.5 0.7-0.5h0.4c0.2 0 0.4 0.1 0.5 0.4l0.6 1.4c0.1 0.2 0.1 0.4-0.1 0.6l-0.4 0.5c-0.2 0.2-0.1 0.4 0 0.6 0.5 0.9 1.3 1.7 2.3 2.2 0.2 0.1 0.4 0.1 0.6-0.1l0.5-0.6c0.2-0.2 0.4-0.2 0.6-0.1l1.4 0.6c0.3 0.1 0.4 0.3 0.4 0.5 0 0.5-0.2 1-0.5 1.3-0.4 0.4-1.3 0.6-2.3 0.2-2.7-1-4.8-3.1-5.8-5.7-0.3-0.8-0.2-1.5 0.1-1.9z"></path>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-marquee reveal" aria-label="Especialidades">
+            <div class="hero-marquee-track">
+              <span>landing pages premium</span>
+              <span>dashboards</span>
+              <span>apps</span>
+              <span>APIs</span>
+              <span>automações</span>
+              <span>deploy</span>
+              <span>landing pages premium</span>
+              <span>dashboards</span>
+              <span>apps</span>
+              <span>APIs</span>
+              <span>automações</span>
+              <span>deploy</span>
+            </div>
           </div>
 
           <dl class="hero-metrics reveal" aria-label="Destaques do portfólio">
@@ -74,8 +99,18 @@
         </div>
 
         <aside class="hero-visual reveal" aria-label="Máscara formada por números binários">
-          <div class="binary-portrait" role="img" aria-label="Desenho de máscara hacker formado por números binários">
-            <img class="binary-mask-art" src="assets/binary-mask.png" alt="Máscara hacker formada por tipografia binária" />
+          <div class="portrait-stage" data-tilt>
+            <div class="visual-hud visual-hud-top" aria-hidden="true">
+              <span>build visual</span>
+              <strong>premium UI</strong>
+            </div>
+            <div class="binary-portrait" role="img" aria-label="Desenho de máscara hacker formado por números binários">
+              <img class="binary-mask-art" src="assets/binary-mask.png" alt="Máscara hacker formada por tipografia binária" />
+            </div>
+            <div class="visual-hud visual-hud-bottom" aria-hidden="true">
+              <span>status</span>
+              <strong>pronto para publicar</strong>
+            </div>
           </div>
         </aside>
       </section>
@@ -131,71 +166,24 @@
       </section>
 
       <section class="responsible section-band" id="responsavel">
-        <div class="section-inner responsible-grid">
-          <figure class="responsible-media reveal" data-tilt>
-            <div class="responsible-terminal" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-              <strong>service.owner</strong>
-            </div>
-            <img
-              class="responsible-photo"
-              src="assets/responsavel-henry.png"
-              alt="Henry John Bell Del Rosal, responsável pelo serviço"
-              loading="lazy"
-              decoding="async"
-            />
-            <div class="responsible-scan" aria-hidden="true"></div>
-            <figcaption class="responsible-badge">
-              <span>responsável oficial</span>
-              <strong>Henry John Bell Del Rosal</strong>
-              <small>Full-stack | Web, mobile, APIs e automações</small>
-            </figcaption>
-            <div class="responsible-code" aria-hidden="true">
-              <span>ID: HJBDR</span>
-              <span>STATUS: ONLINE</span>
-            </div>
-          </figure>
-
-          <div class="section-heading responsible-copy reveal">
-            <p class="eyebrow">responsável pelo serviço</p>
+        <div class="section-inner about-owner">
+          <div class="section-heading about-owner-copy reveal">
+            <p class="eyebrow">quem sou</p>
             <h2>Henry John Bell Del Rosal</h2>
             <p>
-              Atendimento direto, planejamento, desenvolvimento e publicação ficam sob a
-              responsabilidade de Henry, mantendo cada etapa do projeto alinhada, profissional e pronta
-              para entregar uma experiência digital de alto nível.
+              Sou desenvolvedor full-stack e crio sites, interfaces, APIs e automações com foco em
+              visual profissional, experiência clara e entrega pronta para publicar.
             </p>
-
-            <div class="responsible-status" aria-label="Resumo do responsável">
-              <span>owner verificado</span>
-              <strong>Um único responsável cuidando do projeto inteiro.</strong>
-              <small>planejamento → interface → código → publicação</small>
-            </div>
-
-            <div class="responsible-points" aria-label="Responsabilidades do serviço">
-              <article>
-                <span>01</span>
-                <strong>Direção do projeto</strong>
-                <p>Organiza objetivo, prioridades, visual e funcionalidades antes da execução.</p>
-              </article>
-              <article>
-                <span>02</span>
-                <strong>Execução técnica</strong>
-                <p>Constrói interfaces, integrações, automações e ajustes responsivos.</p>
-              </article>
-              <article>
-                <span>03</span>
-                <strong>Entrega final</strong>
-                <p>Revisa acabamento, performance, publicação e pontos de contato do site.</p>
-              </article>
-            </div>
-
-            <div class="responsible-actions">
-              <a class="button primary" href="https://wa.me/5519992072301" target="_blank" rel="noreferrer">Falar com Henry</a>
-              <a class="button ghost" href="#projetos">Ver entregas</a>
-            </div>
+            <a class="button primary owner-whatsapp" href="https://wa.me/5519992072301" target="_blank" rel="noreferrer">
+              Chamar no WhatsApp
+            </a>
           </div>
+
+          <aside class="about-owner-card reveal" aria-label="Resumo de Henry">
+            <span>full-stack developer</span>
+            <strong>Web, mobile, APIs e automações</strong>
+            <p>Projetos com direção visual, código organizado e contato direto do início ao deploy.</p>
+          </aside>
         </div>
       </section>
 
@@ -262,7 +250,7 @@
                 <span>site institucional</span>
                 <h3>HGK Tech</h3>
                 <p>
-                  Site de tecnologia com estética azul, comunicação objetiva e foco em automação,
+                  Site de tecnologia com estética preta e cinza, comunicação objetiva e foco em automação,
                   dados e sistemas integrados para empresas.
                 </p>
                 <div class="project-tags" aria-label="Tecnologias do Site 03">
@@ -273,62 +261,6 @@
                 <a class="site-link" href="https://hgk-tech.vercel.app" target="_blank" rel="noreferrer">Acessar site</a>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="stack section-band" id="stack">
-        <div class="section-inner stack-grid">
-          <div class="section-heading reveal">
-            <p class="eyebrow">stack</p>
-            <h2>Ferramentas modernas para construir, testar e publicar.</h2>
-            <p>
-              O foco é escolher tecnologia que sustenta a experiência: velocidade, responsividade,
-              integração com APIs, animação na medida e uma base simples de evoluir depois do lançamento.
-            </p>
-          </div>
-
-          <div class="stack-board reveal" data-tilt>
-            <div class="stack-terminal" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-              <strong>stack.config.ts</strong>
-            </div>
-
-            <div class="stack-lane">
-              <span>front-end</span>
-              <strong>React</strong>
-              <strong>Next.js</strong>
-              <strong>TypeScript</strong>
-              <p>Interfaces rápidas, componentes reutilizáveis e páginas prontas para escalar.</p>
-            </div>
-            <div class="stack-lane">
-              <span>interface</span>
-              <strong>CSS avançado</strong>
-              <strong>Canvas</strong>
-              <strong>Motion</strong>
-              <p>Visual premium, microinterações e detalhes técnicos que deixam o site memorável.</p>
-            </div>
-            <div class="stack-lane">
-              <span>back-end</span>
-              <strong>Node.js</strong>
-              <strong>REST APIs</strong>
-              <strong>Supabase</strong>
-              <p>Dados, autenticação e integrações para transformar layout em produto funcional.</p>
-            </div>
-            <div class="stack-lane">
-              <span>deploy</span>
-              <strong>Git</strong>
-              <strong>Vercel</strong>
-              <strong>Analytics</strong>
-              <p>Versionamento, publicação rápida e leitura de métricas após o lançamento.</p>
-            </div>
-
-            <div class="stack-status" aria-label="Status de entrega">
-              <span>build aprovado</span>
-              <strong>performance, responsividade e deploy alinhados</strong>
-            </div>
           </div>
         </div>
       </section>
@@ -471,7 +403,7 @@
             <fieldset>
               <legend>Estética</legend>
               <div class="chip-group" data-choice="style">
-                <button class="chip is-active" type="button" data-value="azul escuro" aria-pressed="true">Azul escuro</button>
+                <button class="chip is-active" type="button" data-value="preto e cinza" aria-pressed="true">Preto e cinza</button>
                 <button class="chip" type="button" data-value="minimalista" aria-pressed="false">Minimal</button>
                 <button class="chip" type="button" data-value="tecnológica" aria-pressed="false">Tech</button>
                 <button class="chip" type="button" data-value="premium" aria-pressed="false">Premium</button>
@@ -505,7 +437,7 @@
 
             <div class="brief-preview" aria-live="polite">
               <span>mensagem</span>
-              <strong id="brief-preview-text">landing page | azul escuro | 7 a 14 dias | complexidade 3/5</strong>
+              <strong id="brief-preview-text">landing page | preto e cinza | 7 a 14 dias | complexidade 3/5</strong>
             </div>
 
             <div class="contact-actions">

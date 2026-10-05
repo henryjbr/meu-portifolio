@@ -10,8 +10,20 @@ const updateTopbar = () => {
   topbar?.classList.toggle("is-scrolled", window.scrollY > 18);
 };
 
-window.addEventListener("scroll", updateTopbar, { passive: true });
-updateTopbar();
+const updateScrollProgress = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+  root.style.setProperty("--scroll-progress", `${Math.max(0, Math.min(1, progress))}`);
+};
+
+const updateScrollState = () => {
+  updateTopbar();
+  updateScrollProgress();
+};
+
+window.addEventListener("scroll", updateScrollState, { passive: true });
+window.addEventListener("resize", updateScrollProgress, { passive: true });
+updateScrollState();
 
 navToggle?.addEventListener("click", () => {
   const isOpen = topbar?.dataset.open === "true";
@@ -27,6 +39,35 @@ navLinks.forEach((link) => {
     navToggle?.setAttribute("aria-expanded", "false");
   });
 });
+
+revealEls.forEach((el, index) => {
+  el.style.setProperty("--reveal-delay", `${Math.min((index % 6) * 55, 275)}ms`);
+});
+
+const sectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+const navSections = sectionLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+if ("IntersectionObserver" in window && navSections.length) {
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.getAttribute("id");
+        sectionLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+        });
+      });
+    },
+    {
+      rootMargin: "-38% 0px -52%",
+      threshold: 0.01,
+    },
+  );
+
+  navSections.forEach((section) => navObserver.observe(section));
+}
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
@@ -90,9 +131,9 @@ let nodes = [];
 let pointer = { x: 0, y: 0, active: false };
 
 const nodeColors = [
-  "rgba(99, 199, 255, 0.78)",
-  "rgba(88, 213, 255, 0.68)",
-  "rgba(124, 156, 255, 0.5)",
+  "rgba(214, 214, 214, 0.78)",
+  "rgba(184, 184, 184, 0.68)",
+  "rgba(150, 150, 150, 0.5)",
 ];
 
 const resizeNetworkCanvas = () => {
@@ -152,7 +193,7 @@ const drawNetwork = () => {
       if (distance > maxDistance) continue;
 
       const alpha = (1 - distance / maxDistance) * 0.18;
-      ctx.strokeStyle = `rgba(99, 199, 255, ${alpha})`;
+      ctx.strokeStyle = `rgba(184, 184, 184, ${alpha})`;
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
@@ -166,7 +207,7 @@ const drawNetwork = () => {
 
       if (distance < 180) {
         const alpha = (1 - distance / 180) * 0.42;
-        ctx.strokeStyle = `rgba(88, 213, 255, ${alpha})`;
+        ctx.strokeStyle = `rgba(214, 214, 214, ${alpha})`;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(pointer.x, pointer.y);
@@ -184,7 +225,7 @@ const drawNetwork = () => {
   });
 
   if (pointer.active) {
-    ctx.fillStyle = "rgba(88, 213, 255, 0.72)";
+    ctx.fillStyle = "rgba(214, 214, 214, 0.72)";
     ctx.beginPath();
     ctx.arc(pointer.x, pointer.y, 3.2, 0, Math.PI * 2);
     ctx.fill();
@@ -229,7 +270,7 @@ const whatsappNumber = "5519992072301";
 
 const briefState = {
   project: "landing page",
-  style: "azul escuro",
+  style: "preto e cinza",
   timeline: "7 a 14 dias",
   complexity: "3",
 };
