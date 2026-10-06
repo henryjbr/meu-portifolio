@@ -220,24 +220,56 @@ button {
 
 .nav-toggle {
   display: none;
+  position: relative;
   width: 44px;
   height: 44px;
   place-items: center;
-  gap: 6px;
   border: 1px solid rgba(184, 184, 184, 0.24);
   border-radius: var(--radius);
   background: rgba(18, 18, 18, 0.78);
   color: var(--text);
+  overflow: hidden;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.nav-toggle::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.18), transparent 62%);
+  opacity: 0;
+  transition: opacity 180ms ease;
 }
 
 .nav-toggle span {
+  position: absolute;
+  left: 50%;
   display: block;
-  width: 18px;
+  width: 20px;
   height: 1px;
   background: currentColor;
+  border-radius: 999px;
+  transform: translateX(-50%);
   transition:
     opacity 180ms ease,
-    transform 180ms ease;
+    top 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav-toggle span:first-child {
+  top: 16px;
+}
+
+.nav-toggle span:nth-child(2) {
+  top: 22px;
+}
+
+.nav-toggle span:last-child {
+  top: 28px;
 }
 
 .hero {
@@ -2480,6 +2512,23 @@ output {
   }
 }
 
+@keyframes mobile-menu-pop {
+  0% {
+    transform: translate3d(1rem, -0.65rem, 0) scale(0.94);
+    opacity: 0;
+  }
+
+  72% {
+    transform: translate3d(-0.08rem, 0.04rem, 0) scale(1.015);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
 @keyframes marquee-slide {
   to {
     transform: translateX(-50%);
@@ -2579,56 +2628,212 @@ output {
     background: rgba(5, 5, 5, 0.94);
   }
 
+  .topbar::before {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    content: "";
+    background:
+      radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.1), transparent 14rem),
+      rgba(0, 0, 0, 0.66);
+    opacity: 0;
+    backdrop-filter: blur(0);
+    transition:
+      opacity 260ms ease,
+      backdrop-filter 260ms ease;
+  }
+
   .nav-toggle {
     display: grid;
+    width: 50px;
+    height: 50px;
+    border-color: rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    background:
+      linear-gradient(145deg, rgba(36, 36, 36, 0.92), rgba(8, 8, 8, 0.96)),
+      rgba(18, 18, 18, 0.9);
+    box-shadow:
+      0 14px 34px rgba(0, 0, 0, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-toggle:hover,
+  .nav-toggle:focus-visible {
+    border-color: rgba(255, 255, 255, 0.38);
+    box-shadow:
+      0 18px 42px rgba(0, 0, 0, 0.42),
+      0 0 0 4px rgba(255, 255, 255, 0.045),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-toggle:hover::before,
+  .nav-toggle:focus-visible::before {
+    opacity: 1;
   }
 
   .topbar[data-open="true"] .nav-toggle span:first-child {
-    transform: translateY(7px) rotate(45deg);
+    top: 24px;
+    transform: translateX(-50%) rotate(45deg);
   }
 
   .topbar[data-open="true"] .nav-toggle span:nth-child(2) {
     opacity: 0;
+    transform: translateX(-50%) scaleX(0.2);
   }
 
   .topbar[data-open="true"] .nav-toggle span:last-child {
-    transform: translateY(-7px) rotate(-45deg);
+    top: 24px;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+
+  .topbar[data-open="true"] {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(5, 5, 5, 0.82);
+  }
+
+  .topbar[data-open="true"]::before {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+
+  .topbar[data-open="true"] .nav-toggle {
+    border-color: rgba(255, 255, 255, 0.32);
+    background:
+      linear-gradient(145deg, rgba(40, 40, 40, 0.96), rgba(4, 4, 4, 0.98)),
+      rgba(18, 18, 18, 0.96);
+    box-shadow:
+      0 18px 48px rgba(0, 0, 0, 0.52),
+      0 0 0 4px rgba(255, 255, 255, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .topbar[data-motion="opening"] .nav-toggle {
+    transform: scale(1.04);
+  }
+
+  .topbar[data-motion="closing"] .nav-toggle {
+    transform: scale(0.96);
   }
 
   .nav-links {
-    position: absolute;
-    top: calc(100% - 1px);
-    right: 0;
-    left: 0;
+    position: fixed;
+    top: 4.8rem;
+    right: 1rem;
+    left: auto;
     display: grid;
-    gap: 0;
-    padding: 0.35rem 1rem 0.85rem;
-    border-bottom: 1px solid rgba(184, 184, 184, 0.16);
-    background: rgba(5, 5, 5, 0.95);
-    backdrop-filter: blur(18px);
-    transform: scaleY(0);
-    transform-origin: top;
+    width: min(72vw, 280px);
+    gap: 0.25rem;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    background:
+      linear-gradient(145deg, rgba(22, 22, 22, 0.96), rgba(3, 3, 3, 0.98)),
+      rgba(5, 5, 5, 0.96);
+    box-shadow:
+      0 28px 80px rgba(0, 0, 0, 0.58),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(22px);
+    transform: translate3d(1rem, -0.65rem, 0) scale(0.94);
+    transform-origin: top right;
     opacity: 0;
     pointer-events: none;
     transition:
-      opacity 180ms ease,
-      transform 180ms ease;
+      opacity 240ms ease,
+      transform 280ms cubic-bezier(0.2, 0.85, 0.2, 1);
   }
 
   .topbar[data-open="true"] .nav-links {
-    transform: scaleY(1);
+    transform: translate3d(0, 0, 0) scale(1);
     opacity: 1;
     pointer-events: auto;
   }
 
+  .topbar[data-motion="opening"] .nav-links {
+    animation: mobile-menu-pop 300ms cubic-bezier(0.2, 0.85, 0.2, 1) both;
+  }
+
   .nav-links a {
-    padding: 0.68rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 44px;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: rgba(247, 247, 247, 0.72);
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: right;
+    opacity: 0;
+    transform: translateX(14px);
+    transition:
+      opacity 220ms ease,
+      transform 260ms cubic-bezier(0.2, 0.85, 0.2, 1),
+      background 180ms ease,
+      border-color 180ms ease,
+      color 180ms ease;
+    transition-delay: 0ms;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a:nth-child(1) {
+    --nav-delay: 45ms;
+  }
+
+  .nav-links a:nth-child(2) {
+    --nav-delay: 75ms;
+  }
+
+  .nav-links a:nth-child(3) {
+    --nav-delay: 105ms;
+  }
+
+  .nav-links a:nth-child(4) {
+    --nav-delay: 135ms;
+  }
+
+  .nav-links a:nth-child(5) {
+    --nav-delay: 165ms;
+  }
+
+  .nav-links a:nth-child(6) {
+    --nav-delay: 195ms;
+  }
+
+  .nav-links a:nth-child(7) {
+    --nav-delay: 225ms;
+  }
+
+  .topbar[data-open="true"] .nav-links a {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: var(--nav-delay);
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible,
+  .nav-links a.is-active {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
   }
 
   .nav-links .nav-cta {
     display: inline-flex;
     justify-content: center;
-    margin-top: 0.4rem;
+    min-height: 48px;
+    margin-top: 0.45rem;
+    border-color: rgba(255, 255, 255, 0.24);
+    border-radius: 14px;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08)),
+      rgba(18, 18, 18, 0.9);
+    color: white;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .hero {
@@ -2648,7 +2853,7 @@ output {
   .hero-content {
     max-width: 36rem;
     margin-inline: auto;
-    padding: 0;
+    padding: 0 0 0 1.35rem;
     overflow: visible;
   }
 
@@ -2746,7 +2951,7 @@ output {
   }
 
   .intro-heading {
-    padding-left: 0;
+    padding-left: 1.35rem;
   }
 
   .intro-heading h2 {
@@ -2792,7 +2997,7 @@ output {
 
   .about-owner-copy {
     max-width: 100%;
-    padding-left: 0;
+    padding-left: 1.35rem;
   }
 
   .about-owner-copy h2 {
@@ -2800,7 +3005,7 @@ output {
   }
 
   .responsible-copy {
-    padding-left: 0;
+    padding-left: 1.35rem;
   }
 
   .responsible-copy h2 {
@@ -2841,7 +3046,7 @@ output {
   }
 
   .github-heading {
-    padding-left: 0;
+    padding-left: 1.35rem;
   }
 
   .github-heading h2 {
@@ -2849,7 +3054,7 @@ output {
   }
 
   .contact .section-heading {
-    padding-left: 0;
+    padding-left: 1.35rem;
   }
 
   .contact .section-heading h2 {

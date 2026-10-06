@@ -5,6 +5,7 @@ const navLinks = document.querySelectorAll(".nav-links a");
 const revealEls = document.querySelectorAll(".reveal");
 const tiltEls = document.querySelectorAll("[data-tilt]");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let navMotionTimer;
 
 const updateTopbar = () => {
   topbar?.classList.toggle("is-scrolled", window.scrollY > 18);
@@ -25,19 +26,41 @@ window.addEventListener("scroll", updateScrollState, { passive: true });
 window.addEventListener("resize", updateScrollProgress, { passive: true });
 updateScrollState();
 
-navToggle?.addEventListener("click", () => {
-  const isOpen = topbar?.dataset.open === "true";
+const setNavOpen = (isOpen) => {
   if (!topbar) return;
-  topbar.dataset.open = String(!isOpen);
-  navToggle.setAttribute("aria-expanded", String(!isOpen));
+  window.clearTimeout(navMotionTimer);
+  topbar.dataset.open = String(isOpen);
+  topbar.dataset.motion = isOpen ? "opening" : "closing";
+  navToggle?.setAttribute("aria-expanded", String(isOpen));
+  navToggle?.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+
+  navMotionTimer = window.setTimeout(() => {
+    topbar.dataset.motion = isOpen ? "open" : "closed";
+  }, 320);
+};
+
+topbar?.setAttribute("data-motion", "closed");
+
+navToggle?.addEventListener("click", () => {
+  setNavOpen(topbar?.dataset.open !== "true");
 });
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    if (!topbar) return;
-    topbar.dataset.open = "false";
-    navToggle?.setAttribute("aria-expanded", "false");
+    setNavOpen(false);
   });
+});
+
+document.addEventListener("click", (event) => {
+  if (topbar?.dataset.open !== "true") return;
+  if (event.target instanceof Node && topbar.contains(event.target)) return;
+  setNavOpen(false);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && topbar?.dataset.open === "true") {
+    setNavOpen(false);
+  }
 });
 
 revealEls.forEach((el, index) => {
