@@ -33,6 +33,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -45,6 +46,11 @@ body {
   font-family: var(--font);
   line-height: 1.5;
   overflow-x: hidden;
+}
+
+main {
+  min-width: 0;
+  overflow: hidden;
 }
 
 body::before {
@@ -355,6 +361,7 @@ h2,
 h3,
 p {
   margin-top: 0;
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -530,7 +537,7 @@ h3 {
 
 .hero-visual {
   justify-self: end;
-  width: min(620px, 100%);
+  width: min(460px, 100%);
 }
 
 .binary-portrait {
@@ -2264,9 +2271,11 @@ output {
   padding: clamp(0.8rem, 1.5vw, 1.15rem);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius);
+  aspect-ratio: 450 / 584;
   background:
+    radial-gradient(circle at 48% 34%, rgba(255, 255, 255, 0.1), transparent 34%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.09), transparent 32%),
-    var(--surface);
+    linear-gradient(150deg, rgba(28, 28, 28, 0.96), rgba(3, 3, 3, 0.98) 62%);
   box-shadow:
     0 42px 120px rgba(0, 0, 0, 0.54),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -2296,8 +2305,8 @@ output {
 }
 
 .portrait-stage .binary-portrait {
-  height: min(62vh, 610px);
-  min-height: 470px;
+  height: 100%;
+  min-height: 0;
   filter:
     grayscale(0.08)
     drop-shadow(0 0 24px rgba(255, 255, 255, 0.08));
@@ -2606,8 +2615,9 @@ output {
   }
 
   .hero {
-    min-height: min(94svh, 900px);
-    padding: 5.8rem 1rem 3.25rem;
+    gap: 2rem;
+    min-height: auto;
+    padding: 5.55rem 1rem 3.25rem;
   }
 
   .hero-content,
@@ -2618,10 +2628,11 @@ output {
 
   .hero-content {
     padding-left: 0.9rem;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .hero-visual {
+    justify-self: center;
     overflow: visible;
   }
 
@@ -2652,6 +2663,7 @@ output {
 
   .hero-metrics {
     grid-template-columns: 1fr;
+    gap: 0.68rem;
   }
 
   .hero-metrics div {
@@ -2659,17 +2671,19 @@ output {
   }
 
   .binary-portrait {
-    height: min(92vw, 520px);
-    min-height: 380px;
+    height: 100%;
+    min-height: 0;
   }
 
   .portrait-stage {
+    width: min(100%, 450px);
+    margin-inline: auto;
     padding: 0.7rem;
   }
 
   .portrait-stage .binary-portrait {
-    height: min(86vw, 480px);
-    min-height: 330px;
+    height: 100%;
+    min-height: 0;
   }
 
   .visual-hud {
@@ -2782,7 +2796,7 @@ output {
   }
 
   .section-band {
-    padding: 4.2rem 1rem;
+    padding: 3.75rem 1rem;
   }
 
   .responsible-media {
@@ -2828,6 +2842,13 @@ output {
 
   .site-card {
     min-height: 0;
+  }
+
+  .site-copy,
+  .github-terminal,
+  .brief-preview strong,
+  .contact-card strong {
+    overflow-wrap: anywhere;
   }
 
   .github-heading {
@@ -2893,8 +2914,35 @@ output {
   }
 
   .binary-portrait {
-    height: 360px;
-    min-height: 330px;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .hero-kicker {
+    gap: 0.55rem;
+  }
+
+  .hero-kicker span,
+  .hero-kicker .eyebrow {
+    max-width: 100%;
+  }
+
+  .hero-marquee {
+    width: 100%;
+  }
+
+  .hero-metrics dt {
+    font-size: 1.42rem;
+  }
+
+  .chip-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chip {
+    min-height: 44px;
+    padding-right: 0.6rem;
+    font-size: 0.76rem;
   }
 
   .site-shot {
