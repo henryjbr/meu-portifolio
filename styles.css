@@ -275,8 +275,8 @@ button {
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 500px);
-  gap: 5.25rem;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 600px);
+  gap: 4.25rem;
   align-items: center;
   min-height: min(92svh, 980px);
   padding: 7.2rem 4rem 4.2rem;
@@ -569,32 +569,7 @@ h3 {
 
 .hero-visual {
   justify-self: end;
-  width: min(460px, 100%);
-}
-
-.binary-portrait {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  min-width: 0;
-  height: min(66vh, 640px);
-  min-height: 500px;
-  overflow: visible;
-  filter: drop-shadow(0 0 26px rgba(255, 255, 255, 0.08));
-}
-
-.binary-mask-art {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  filter:
-    contrast(1.08)
-    brightness(1.04)
-    drop-shadow(0 0 18px rgba(255, 255, 255, 0.1));
-  user-select: none;
-  pointer-events: none;
+  width: min(620px, 100%);
 }
 
 .project-tags {
@@ -1336,7 +1311,7 @@ h3 {
 
 .site-showcase {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -1380,7 +1355,7 @@ h3 {
   border-bottom: 1px solid rgba(184, 184, 184, 0.14);
   background:
     radial-gradient(circle at 50% 0%, rgba(184, 184, 184, 0.16), transparent 42%),
-    rgba(8, 8, 8, 0.72);
+    rgba(8, 8, 8, 0.82);
   overflow: hidden;
 }
 
@@ -1392,13 +1367,9 @@ h3 {
   object-fit: cover;
   object-position: center;
   background: #030b16;
-  transition: transform 240ms ease, filter 240ms ease;
-}
-
-.site-card:hover .site-shot img,
-.site-card:focus-within .site-shot img {
-  filter: brightness(1.08);
-  transform: scale(1.025);
+  transition:
+    filter 260ms ease,
+    transform 420ms ease;
 }
 
 .site-copy {
@@ -1568,13 +1539,15 @@ legend,
 
 .github-avatar {
   flex: 0 0 auto;
+  display: grid;
   width: 54px;
   height: 54px;
+  place-items: center;
   border: 1px solid rgba(238, 238, 238, 0.36);
   border-radius: 50%;
   background: rgba(184, 184, 184, 0.12);
-  object-fit: cover;
-  object-position: center;
+  color: rgba(247, 247, 247, 0.94);
+  font-weight: 950;
   box-shadow:
     0 0 28px rgba(184, 184, 184, 0.24),
     0 14px 28px rgba(0, 0, 0, 0.26);
@@ -2298,89 +2271,78 @@ output {
   background: rgba(247, 247, 247, 0.72);
 }
 
-.portrait-stage {
+.workspace-stage {
   position: relative;
-  padding: clamp(0.8rem, 1.5vw, 1.15rem);
+  min-height: 520px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius);
-  aspect-ratio: 450 / 584;
   background:
-    radial-gradient(circle at 48% 34%, rgba(255, 255, 255, 0.1), transparent 34%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.09), transparent 32%),
-    linear-gradient(150deg, rgba(28, 28, 28, 0.96), rgba(3, 3, 3, 0.98) 62%);
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 36%),
+    rgba(8, 8, 8, 0.94);
   box-shadow:
     0 42px 120px rgba(0, 0, 0, 0.54),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  isolation: isolate;
   transform-style: preserve-3d;
   overflow: hidden;
 }
 
-.portrait-stage::before,
-.portrait-stage::after {
+.workspace-stage::before,
+.workspace-stage::after {
   position: absolute;
   pointer-events: none;
   content: "";
 }
 
-.portrait-stage::before {
+.workspace-stage::before {
   inset: 0;
+  z-index: 2;
   background:
-    linear-gradient(120deg, transparent 0 36%, rgba(255, 255, 255, 0.12) 50%, transparent 64%),
+    linear-gradient(90deg, rgba(5, 5, 5, 0.56), transparent 28%, transparent 72%, rgba(5, 5, 5, 0.74)),
+    linear-gradient(180deg, transparent 52%, rgba(5, 5, 5, 0.88)),
     repeating-linear-gradient(135deg, transparent 0 40px, rgba(255, 255, 255, 0.026) 40px 41px);
-  opacity: 0.62;
 }
 
-.portrait-stage::after {
-  inset: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.workspace-stage::after {
+  inset: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: calc(var(--radius) - 2px);
-}
-
-.portrait-stage .binary-portrait {
-  height: 100%;
-  min-height: 0;
-  filter:
-    grayscale(0.08)
-    drop-shadow(0 0 24px rgba(255, 255, 255, 0.08));
-}
-
-.visual-hud {
-  position: absolute;
   z-index: 3;
+}
+
+.workspace-code {
+  position: absolute;
+  inset: 1.25rem;
+  z-index: 4;
   display: grid;
-  gap: 0.12rem;
-  padding: 0.68rem 0.76rem;
+  align-content: center;
+  gap: 0.7rem;
+  padding: clamp(1rem, 2.4vw, 1.8rem);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: calc(var(--radius) - 2px);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 38%),
+    rgba(5, 5, 5, 0.48);
+  backdrop-filter: blur(12px);
+}
+
+.workspace-code span {
+  color: rgba(247, 247, 247, 0.55);
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.workspace-code strong {
+  width: fit-content;
+  padding: 0.72rem 0.82rem;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: calc(var(--radius) - 2px);
-  background: rgba(5, 5, 5, 0.72);
-  box-shadow:
-    0 18px 42px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(16px);
-}
-
-.visual-hud span {
-  color: rgba(247, 247, 247, 0.56);
-  font-size: 0.64rem;
-  font-weight: 950;
-  text-transform: uppercase;
-}
-
-.visual-hud strong {
+  background: rgba(255, 255, 255, 0.06);
   color: rgba(247, 247, 247, 0.94);
-  font-size: 0.86rem;
-  line-height: 1.12;
-}
-
-.visual-hud-top {
-  top: 1.65rem;
-  left: 1.65rem;
-}
-
-.visual-hud-bottom {
-  right: 1.65rem;
-  bottom: 1.65rem;
-  text-align: right;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.08;
 }
 
 .hero-metrics div,
@@ -2442,10 +2404,8 @@ output {
   content: "03";
 }
 
-.site-shot img {
-  transition:
-    filter 260ms ease,
-    transform 420ms ease;
+.site-card:nth-child(4)::after {
+  content: "04";
 }
 
 .site-card:hover,
@@ -2465,7 +2425,7 @@ output {
 
 .github-panel,
 .brief-tool,
-.portrait-stage {
+.workspace-stage {
   animation: panel-float 8s ease-in-out infinite;
 }
 
@@ -3118,11 +3078,6 @@ output {
   .site-shot {
     padding: 0;
     border-bottom-color: rgba(184, 184, 184, 0.1);
-  }
-
-  .site-shot img {
-    border: 0;
-    border-radius: 0;
   }
 
   .project-tags {

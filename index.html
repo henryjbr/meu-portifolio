@@ -8,6 +8,8 @@
       content="Portfólio de Henry, desenvolvedor de software focado em interfaces web, apps, APIs, automações e produtos digitais com estética preta e cinza premium."
     />
     <title>Henry | Desenvolvedor de Software</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -98,18 +100,15 @@
           </dl>
         </div>
 
-        <aside class="hero-visual reveal" aria-label="Máscara formada por números binários">
-          <div class="portrait-stage" data-tilt>
-            <div class="visual-hud visual-hud-top" aria-hidden="true">
-              <span>build visual</span>
-              <strong>premium UI</strong>
-            </div>
-            <div class="binary-portrait" role="img" aria-label="Desenho de máscara hacker formado por números binários">
-              <img class="binary-mask-art" src="assets/binary-mask-dark.png" alt="Máscara hacker formada por tipografia binária" />
-            </div>
-            <div class="visual-hud visual-hud-bottom" aria-hidden="true">
-              <span>status</span>
-              <strong>pronto para publicar</strong>
+        <aside class="hero-visual reveal" aria-label="Projetos em destaque">
+          <div class="workspace-stage" data-tilt>
+            <div class="workspace-code">
+              <span>const projetos = [</span>
+              <strong>"Galeria Fina Arte"</strong>
+              <strong>"Bella Frandin"</strong>
+              <strong>"HGK Tech"</strong>
+              <strong>"Gonçalez Veículos"</strong>
+              <span>].map(publicar)</span>
             </div>
           </div>
         </aside>
@@ -192,16 +191,15 @@
           <div class="section-head reveal">
             <div class="section-heading">
               <p class="eyebrow">sites publicados</p>
-              <h2>Três projetos para mostrar resultado real.</h2>
+              <h2>Quatro projetos para mostrar resultado real.</h2>
             </div>
             <p>
-              Uma área direta para apresentar imagens dos seus sites, explicar o objetivo de cada
+              Uma área direta para apresentar seus sites, explicar o objetivo de cada
               projeto e levar o visitante para acessar a versão online.
             </p>
           </div>
 
           <div class="site-showcase">
-            <!-- Troque src, href, título e texto pelos seus sites reais. -->
             <article class="site-card reveal" data-tilt>
               <a class="site-shot" href="#" aria-label="Acessar Galeria Fina Arte">
                 <img src="assets/site-1.png" alt="Prévia do site Galeria Fina Arte" />
@@ -261,6 +259,26 @@
                 <a class="site-link" href="https://hgk-tech.vercel.app" target="_blank" rel="noreferrer">Acessar site</a>
               </div>
             </article>
+
+            <article class="site-card reveal" data-tilt>
+              <a class="site-shot" href="https://goncales-veiculos.vercel.app/" target="_blank" rel="noreferrer" aria-label="Acessar Gonçalez Veículos">
+                <img src="assets/site-4.png" alt="Prévia do site Gonçalez Veículos" />
+              </a>
+              <div class="site-copy">
+                <span>catálogo automotivo</span>
+                <h3>Gonçalez Veículos</h3>
+                <p>
+                  Catálogo premium de carros e motos, com filtros por marca, busca, estoque organizado
+                  e navegação direta para quem quer encontrar o veículo ideal.
+                </p>
+                <div class="project-tags" aria-label="Tecnologias do Site 04">
+                  <small>Catálogo</small>
+                  <small>Filtros</small>
+                  <small>Responsivo</small>
+                </div>
+                <a class="site-link" href="https://goncales-veiculos.vercel.app/" target="_blank" rel="noreferrer">Acessar site</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -283,13 +301,7 @@
 
           <aside class="github-panel reveal" data-tilt aria-label="Resumo do perfil no GitHub">
             <div class="github-profile">
-              <img
-                class="github-avatar"
-                src="https://github.com/henryjbr.png?size=160"
-                alt="Foto de perfil de Henry no GitHub"
-                loading="lazy"
-                decoding="async"
-              />
+              <div class="github-avatar" aria-hidden="true">HJ</div>
               <div>
                 <span>perfil público</span>
                 <strong>@henryjbr</strong>
